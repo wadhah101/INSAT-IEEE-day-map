@@ -6,11 +6,11 @@ import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 
 const zoomin = keyframes`
   from {
-    transform : scale(0.5) translateY(15vh) ;
+    transform : scale(0.25) translateY(50vh) ;
   }
 
   to {
-    transform : scale(1)  translateY(0)  ;
+    transform : scale(1)  translateY(0)   ;
   }
 `
 
