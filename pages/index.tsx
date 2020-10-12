@@ -1,10 +1,20 @@
-import styled from 'styled-components'
+import { NextPage } from "next";
+import styled from "styled-components";
+import MainMap from "../components/MainMap";
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 95%;
+  padding: 0 1rem;
+`;
 
-export default function Home() {
-  return <Title>My page</Title>
-}
+const index: NextPage = () => {
+  return (
+    <Container>
+      <MainMap />
+    </Container>
+  );
+};
+
+export default index;
