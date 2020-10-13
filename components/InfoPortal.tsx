@@ -133,7 +133,10 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
           >
             <span> join our conferance</span> <SiGooglehangoutsmeet />
           </HangoutButton>
-          <ButtonWithIcon href={`https://www.youtube.com/`} target="_blank">
+          <ButtonWithIcon
+            href="https://forms.gle/iAFmkvrt4rw6e1Tx5"
+            target="_blank"
+          >
             <span> join our family , fill the form ! </span> <RiFileTextFill />
           </ButtonWithIcon>
         </Information>
