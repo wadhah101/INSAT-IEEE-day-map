@@ -58,6 +58,7 @@ const Information = styled.div<{ light: string }>`
   display: flex;
   flex-direction: column;
   align-items: start;
+  overflow-y: auto;
   padding: 1rem;
   background: ${({ light }) => light};
   color: #121212;
@@ -67,6 +68,7 @@ const Title = styled.h2<{ accent: string }>`
   text-transform: capitalize;
   font-size: 3rem;
   font-weight: 500;
+  line-height: 120%;
   letter-spacing: 0.3rem;
   margin-bottom: 0.5rem;
 `
@@ -85,7 +87,6 @@ const ButtonWithIcon = styled.a`
   justify-content: center;
   text-transform: uppercase;
   border-radius: 100000rem;
-
   span {
     margin-right: 1rem;
   }
