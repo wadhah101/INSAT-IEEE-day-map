@@ -39,7 +39,7 @@ const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
       {flags.map(({ chapter, corr }) => (
         <ChapterFlag
           key={chapter.acronym}
-          src={`images/map/flags/${chapter.acronym}.png`}
+          src={`images/map/flags/${chapter.acronym}.webp`}
           onClick={() => openPortal(chapter)}
           x={corr.x}
           y={corr.y}
