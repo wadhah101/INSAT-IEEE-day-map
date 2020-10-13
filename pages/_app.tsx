@@ -1,8 +1,26 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Head from 'next/head'
 import { defaultTheme } from '../styles/theme'
 import '../styles/index.css'
+import { up } from 'styled-breakpoints'
+
+const Global = createGlobalStyle`
+html {
+      font-size: 16px;
+    }
+  ${up('md')} {
+    html {
+      font-size: 13px;
+    }
+  }
+  ${up('xl')} {
+    html {
+      font-size: 16px;
+    }
+  }
+
+`
 
 const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -12,12 +30,13 @@ const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <link rel="icon" type="image/png" href="/icon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <Global />
       <Component {...pageProps} />
       <script
         async
         defer
         src="https://scripts.simpleanalyticscdn.com/latest.js"
-      ></script>
+      />
       <noscript>
         <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" />
       </noscript>

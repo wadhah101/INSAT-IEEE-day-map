@@ -1,11 +1,10 @@
 import { NextPage } from 'next'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import React, { useState } from 'react'
 import { Portal } from 'react-portal'
 import InfoPortal from '../components/InfoPortal'
 import { Chapter, chapters } from '../data/chapters.static'
 import MainMap from '../components/MainMap'
-import { up } from 'styled-breakpoints'
 
 const Wrapper = styled.div`
   background: #794c32;
@@ -13,23 +12,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-`
-
-const Global = createGlobalStyle`
-html {
-      font-size: 16px;
-    }
-  ${up('md')} {
-    html {
-      font-size: 13px;
-    }
-  }
-  ${up('xl')} {
-    html {
-      font-size: 16px;
-    }
-  }
-
 `
 
 const index: NextPage = () => {
@@ -43,7 +25,6 @@ const index: NextPage = () => {
 
   return (
     <Wrapper>
-      <Global />
       <MainMap openPortal={openPortal} />
       {portalOpen && (
         <Portal>

@@ -9,6 +9,9 @@ interface props {
 
 const Container = styled.div`
   position: relative;
+  @media (orientation: portrait) {
+    display: none;
+  }
 `
 
 const MapImage = styled.img`

@@ -5,6 +5,7 @@ import { Chapter } from '../data/chapters.static'
 import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 import { SiGooglehangoutsmeet } from 'react-icons/si'
 import { RiFileTextFill } from 'react-icons/ri'
+import { up } from 'styled-breakpoints'
 
 interface Props {
   data: Chapter
@@ -31,27 +32,42 @@ const Wrapper = styled.div`
   display: grid;
   place-items: center;
   background: #00000099;
+  @media (orientation: portrait) {
+    display: none;
+  }
 `
 
 const Container = styled.div`
   overflow: hidden;
   background: #fff;
   z-index: 6;
+  border-radius: 0.5rem;
+  animation: 0.4s ease forwards ${zoomin};
+  overflow: auto;
   display: grid;
   grid-template-columns: 4fr 7fr;
   max-width: 1200px;
-  width: 75%;
-  height: 72vh;
-  border-radius: 0.5rem;
-  animation: 0.4s ease forwards ${zoomin};
+  width: 85%;
+  height: 81vh;
+
+  ${up('lg')} {
+    width: 75%;
+    height: 72vh;
+  }
 `
 
 const Pictures = styled.div<{ accent: string }>`
   border-right: 5px solid ${({ accent }) => accent};
   img {
     width: 100%;
-    height: 24vh;
+    height: 27vh;
     object-fit: cover;
+  }
+
+  ${up('lg')} {
+    img {
+      height: 24vh;
+    }
   }
 `
 const Information = styled.div<{ light: string }>`
@@ -59,18 +75,24 @@ const Information = styled.div<{ light: string }>`
   flex-direction: column;
   align-items: start;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   background: ${({ light }) => light};
   color: #121212;
+  ${up('lg')} {
+    padding: 1rem;
+  }
 `
 const Title = styled.h2<{ accent: string }>`
   color: ${({ accent }) => accent};
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 2.125rem;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: 0.3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  ${up('lg')} {
+    font-size: 3rem;
+  }
 `
 
 const ButtonWithIcon = styled.a`
@@ -78,7 +100,8 @@ const ButtonWithIcon = styled.a`
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   margin-top: 0.5rem;
   background: #00a7e1;
-  padding: 0.65rem 2.5rem;
+  padding: 0.65rem 2rem;
+  text-align: center;
   color: white;
   display: flex;
   font-weight: 500;
@@ -100,7 +123,9 @@ const ButtonWithIcon = styled.a`
     filter: brightness(0.96);
   }
 `
-
+const Writing = styled.p`
+  font-size: 1rem;
+`
 const HangoutButton = styled(ButtonWithIcon)<{ accent: string }>`
   margin-top: 1.5rem;
   background: ${({ accent }) => accent};
@@ -121,7 +146,7 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
         <Information light={data.colors.light}>
           <Title accent={data.colors.accent}> {data.name} </Title>
 
-          <p>{data.writing}</p>
+          <Writing>{data.writing}</Writing>
 
           <HangoutButton
             accent={data.colors.accent}
