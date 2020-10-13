@@ -5,6 +5,7 @@ import { Portal } from 'react-portal'
 import InfoPortal from '../components/InfoPortal'
 import { Chapter, chapters } from '../data/chapters.static'
 import MainMap from '../components/MainMap'
+import PortraitWarning from '../components/PortraitWarning'
 
 const Wrapper = styled.div`
   background: #794c32;
@@ -34,6 +35,7 @@ const index: NextPage = () => {
           />
         </Portal>
       )}
+      <PortraitWarning />
     </Wrapper>
   )
 }
