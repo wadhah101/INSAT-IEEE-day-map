@@ -8,11 +8,11 @@ import { RiFileTextFill } from 'react-icons/ri'
 
 const zoomin = keyframes`
   from {
-    transform : scale(0.25) translateY(50vh) ;
+    transform : scale(0.25)  ;
   }
 
   to {
-    transform : scale(1)  translateY(0)   ;
+    transform : scale(1) ;
   }
 `
 
@@ -43,7 +43,7 @@ const Container = styled.div`
   width: 70%;
   height: 72vh;
   border-radius: 0.5rem;
-  animation: 0.5s ease forwards ${zoomin};
+  animation: 0.4s ease forwards ${zoomin};
 `
 
 const Pictures = styled.div<{ accent: string }>`
@@ -125,6 +125,8 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
           <Title accent={data.colors.accent}> {data.name} </Title>
 
           <Writing>{data.writing}</Writing>
+
+          {/* <Spacer /> */}
 
           <HangoutButton
             accent={data.colors.accent}
