@@ -13,6 +13,14 @@ const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Component {...pageProps} />
+      <script
+        async
+        defer
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript>
+        <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" />
+      </noscript>
     </ThemeProvider>
   )
 }
