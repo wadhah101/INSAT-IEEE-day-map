@@ -104,6 +104,10 @@ const ButtonWithIcon = styled.a`
   text-align: center;
   color: white;
   display: flex;
+  width: 100%;
+  ${up('lg')} {
+    width: auto;
+  }
   font-weight: 500;
   letter-spacing: 0.1rem;
   align-items: center;

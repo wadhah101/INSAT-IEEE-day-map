@@ -2,8 +2,7 @@ export const writing = {
   cs: `The IEEE Computer Society INSAT SB Chapter is the premier source of information, inspiration, and collaboration in INSAT’s computer science community. Connecting them to multiple resources and professionals in the field.
   CS Chapter was founded by IEEEians with a passion for Software and Computer Science in March of 2015 and has since moved from strength to strength. Today we are home for more than 130 members, 20 training sessions and 6 events.`,
 
-  ras: `The IEEE Computer Society INSAT SB Chapter is the premier source of information, inspiration, and collaboration in INSAT’s computer science community. Connecting them to multiple resources and professionals in the field.
-  CS Chapter was founded by IEEEians with a passion for Software and Computer Science in March of 2015 and has since moved from strength to strength. Today we are home for more than 130 members, 20 training sessions and 6 events.`,
+  ras: `IEEE RAS INSAT SBC is one of the 5 technical chapters of IEEE INSAT Student Branch that supports the development and the exchange of scientific knowlegde in the fields of Robotics and Automation. Our chapter works mainly on 4 axes: workshops competitions, National Robotics Weekend and Projects.`,
 
   ias: `IEEE Industry Applications Society is one of the largest societies within IEEE, the IAS focuses specifically on the unique needs of industry and commerce and is a source of professional power to its nearly 14,000 worldwide members.
   Within INSAT IAS Chapter, the main goal is to reinforce the exchange of scientific knowledge in industrial concepts and operations.`,
