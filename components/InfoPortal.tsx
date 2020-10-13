@@ -135,6 +135,10 @@ const HangoutButton = styled(ButtonWithIcon)<{ accent: string }>`
   background: ${({ accent }) => accent};
 `
 
+const Sameline = styled.span`
+  white-space: nowrap;
+`
+
 const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
   const ref = useRef<HTMLDivElement>(null)
   useOnClickOutside(ref, closePortal)
@@ -163,7 +167,10 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
             href="https://forms.gle/iAFmkvrt4rw6e1Tx5"
             target="_blank"
           >
-            <span> join our family , fill the form ! </span> <RiFileTextFill />
+            <span>
+              join our family , fill <Sameline>the form !</Sameline>
+            </span>
+            <RiFileTextFill />
           </ButtonWithIcon>
         </Information>
       </Container>
