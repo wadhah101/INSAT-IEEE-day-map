@@ -30,7 +30,7 @@ export const chapters = {
     'http://cs-insat.ieee.tn',
     { accent: '#ff6535', light: '#ffe9e2' },
     writing.cs,
-    env.NEXT_PUBLIC_CS_LINK
+    'https://meet.google.com/'
   ),
 
   ras: new Chapter(
@@ -40,7 +40,7 @@ export const chapters = {
     { accent: '#e3074a', light: '#FEECF1' },
 
     writing.ras,
-    env.NEXT_PUBLIC_RAS_LINK
+    'https://meet.google.com/'
   ),
 
   embs: new Chapter(
@@ -50,7 +50,7 @@ export const chapters = {
     { accent: '#0E4DC4', light: '#EBF1FE' },
 
     writing.embs,
-    env.NEXT_PUBLIC_EMBS_LINK
+    'https://meet.google.com/'
   ),
 
   ias: new Chapter(
@@ -60,7 +60,7 @@ export const chapters = {
     { accent: '#3a7406', light: '#F0FEE5' },
 
     writing.ias,
-    env.NEXT_PUBLIC_IAS_LINK
+    'https://meet.google.com/'
   ),
 
   pes: new Chapter(
@@ -70,7 +70,7 @@ export const chapters = {
     { accent: '#538d22', light: '#F2FAEC' },
 
     writing.pes,
-    env.NEXT_PUBLIC_PES_LINK
+    'https://meet.google.com/'
   ),
 
   wie: new Chapter(
@@ -79,6 +79,17 @@ export const chapters = {
     null,
     { accent: '#e83e8c', light: '#FDF1F7' },
     writing.wie,
-    env.NEXT_PUBLIC_WIE_LINK
+    'https://meet.google.com/'
   ),
 }
+
+const sbWriting = ``
+
+export const studentBranch = new Chapter(
+  'sb',
+  'student branch',
+  'https://insat.ieee.tn/',
+  { accent: '#ffffff00', light: '#E5F6FF' },
+  sbWriting,
+  'https://meet.google.com/'
+)

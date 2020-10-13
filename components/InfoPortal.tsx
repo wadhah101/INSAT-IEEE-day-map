@@ -40,7 +40,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 4fr 7fr;
   max-width: 1200px;
-  width: 65%;
+  width: 75%;
   height: 72vh;
   border-radius: 0.5rem;
   animation: 0.4s ease forwards ${zoomin};
@@ -126,11 +126,9 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
 
           <Writing>{data.writing}</Writing>
 
-          {/* <Spacer /> */}
-
           <HangoutButton
             accent={data.colors.accent}
-            href={data.website}
+            href={data.meet}
             target="_blank"
           >
             <span> join our conferance</span> <SiGooglehangoutsmeet />

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { Chapter } from '../data/chapters.static'
-import { flags } from '../data/coordinates.data'
+import { flags, sbFlag } from '../data/coordinates.data'
 
 interface props {
   openPortal: (chapter: Chapter) => void
@@ -18,9 +18,9 @@ const MapImage = styled.img`
 const ChapterFlag = styled.img<{ accent: string; x: number; y: number }>`
   position: absolute;
   cursor: pointer;
-
-  height: 11.5%;
+  height: 12%;
   transition: all ease-in-out 0.3s;
+  will-change: filter;
 
   ${({ accent, x, y }) => css`
     bottom: ${y}%;
@@ -46,6 +46,13 @@ const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
           accent={chapter.colors.accent}
         />
       ))}
+
+      <ChapterFlag
+        src={`images/map/flags/sb.webp`}
+        x={sbFlag.corr.x}
+        y={sbFlag.corr.y}
+        accent={sbFlag.chapter.colors.accent}
+      />
     </Container>
   )
 }
