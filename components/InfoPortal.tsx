@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Chapter } from '../data/chapters.static'
 import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 import { SiGooglehangoutsmeet } from 'react-icons/si'
 import { RiFileTextFill } from 'react-icons/ri'
-import { up, down, between, only } from 'styled-breakpoints'
 
 const zoomin = keyframes`
   from {
@@ -63,13 +62,6 @@ const Title = styled.h2<{ accent: string }>`
   font-weight: 500;
   letter-spacing: 0.3rem;
   margin-bottom: 0.5rem;
-
-  /* hd */
-
-  /* fhd */
-  ${up('xl')} {
-    font-size: 3rem;
-  }
 `
 
 const Information = styled.div<{ light: string }>`
