@@ -48,7 +48,7 @@ const Container = styled.div`
   grid-template-columns: 4fr 7fr;
   max-width: 1200px;
   width: 85%;
-  height: 81vh;
+  height: 90vh;
 
   ${up('lg')} {
     width: 75%;
@@ -60,7 +60,7 @@ const Pictures = styled.div<{ accent: string }>`
   border-right: 5px solid ${({ accent }) => accent};
   img {
     width: 100%;
-    height: 27vh;
+    height: 30vh;
     object-fit: cover;
   }
 
