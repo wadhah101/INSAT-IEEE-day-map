@@ -14,7 +14,7 @@ interface Props {
 
 const zoomin = keyframes`
   from {
-    transform : scale(0.5)  ;
+    transform : scale(0)  ;
   }
 
   to {
@@ -42,7 +42,7 @@ const Container = styled.div`
   background: #fff;
   z-index: 6;
   border-radius: 0.5rem;
-  animation: 0.4s ease forwards ${zoomin};
+  animation: 0.3s ease forwards ${zoomin};
   overflow: auto;
   display: grid;
   grid-template-columns: 4fr 7fr;

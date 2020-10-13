@@ -1,11 +1,12 @@
 import { NextPage } from 'next'
 import styled from 'styled-components'
-import React, { useState } from 'react'
+import React from 'react'
 import { Portal } from 'react-portal'
 import InfoPortal from '../components/InfoPortal'
-import { Chapter, chapters } from '../data/chapters.static'
+import { chapters } from '../data/chapters.static'
 import MainMap from '../components/MainMap'
 import PortraitWarning from '../components/PortraitWarning'
+import { useRouter } from 'next/router'
 
 const Wrapper = styled.div`
   background: #794c32;
@@ -16,22 +17,26 @@ const Wrapper = styled.div`
 `
 
 const index: NextPage = () => {
-  const [portalOpen, setPortalOpen] = useState(false)
-  const [currentData, setCurrentData] = useState(chapters.cs)
+  const router = useRouter()
 
-  const openPortal = (chapter: Chapter) => {
-    setCurrentData(chapter)
-    setPortalOpen(true)
-  }
+  const routeAcronym = router.query.chapter
+
+  const current = Object.values(chapters).find(
+    ({ acronym }) => acronym === routeAcronym
+  )
 
   return (
     <Wrapper>
-      <MainMap openPortal={openPortal} />
-      {portalOpen && (
+      <MainMap
+        openPortal={({ acronym }) => {
+          router.push({ path: '/', query: { chapter: acronym } })
+        }}
+      />
+      {current && (
         <Portal>
           <InfoPortal
-            closePortal={() => setPortalOpen(false)}
-            data={currentData}
+            closePortal={() => router.push({ path: '/' })}
+            data={current}
           />
         </Portal>
       )}
