@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { Chapter } from '../data/chapters.static'
-import { flags, sbFlag } from '../data/coordinates.data'
+import { flags, sbFlag } from '../data/flags.static'
 
 interface props {
   openPortal: (chapter: Chapter) => void
@@ -31,6 +31,14 @@ const ChapterFlag = styled.img<{ accent: string; x: number; y: number }>`
   `}
 `
 
+const SbFlag = styled(ChapterFlag)`
+  cursor: auto;
+  height: 21%;
+  &:hover {
+    filter: none;
+  }
+`
+
 const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
   return (
     <Container>
@@ -47,7 +55,7 @@ const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
         />
       ))}
 
-      <ChapterFlag
+      <SbFlag
         src={`images/map/flags/sb.webp`}
         x={sbFlag.corr.x}
         y={sbFlag.corr.y}

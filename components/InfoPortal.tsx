@@ -6,6 +6,11 @@ import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 import { SiGooglehangoutsmeet } from 'react-icons/si'
 import { RiFileTextFill } from 'react-icons/ri'
 
+interface Props {
+  data: Chapter
+  closePortal: () => void
+}
+
 const zoomin = keyframes`
   from {
     transform : scale(0.5)  ;
@@ -15,11 +20,6 @@ const zoomin = keyframes`
     transform : scale(1) ;
   }
 `
-
-interface Props {
-  data: Chapter
-  closePortal: () => void
-}
 
 const Wrapper = styled.div`
   position: fixed;
@@ -54,16 +54,6 @@ const Pictures = styled.div<{ accent: string }>`
     object-fit: cover;
   }
 `
-
-const Title = styled.h2<{ accent: string }>`
-  color: ${({ accent }) => accent};
-  text-transform: capitalize;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.3rem;
-  margin-bottom: 0.5rem;
-`
-
 const Information = styled.div<{ light: string }>`
   display: flex;
   flex-direction: column;
@@ -72,8 +62,14 @@ const Information = styled.div<{ light: string }>`
   background: ${({ light }) => light};
   color: #121212;
 `
-
-const Writing = styled.p``
+const Title = styled.h2<{ accent: string }>`
+  color: ${({ accent }) => accent};
+  text-transform: capitalize;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  margin-bottom: 0.5rem;
+`
 
 const ButtonWithIcon = styled.a`
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -124,7 +120,7 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
         <Information light={data.colors.light}>
           <Title accent={data.colors.accent}> {data.name} </Title>
 
-          <Writing>{data.writing}</Writing>
+          <p>{data.writing}</p>
 
           <HangoutButton
             accent={data.colors.accent}
