@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { useRef } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from 'styled-components'
 import { Chapter } from '../data/chapters.static'
 import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 import { SiGooglehangoutsmeet } from 'react-icons/si'
 import { RiFileTextFill } from 'react-icons/ri'
+import { up, down, between, only } from 'styled-breakpoints'
 
 const zoomin = keyframes`
   from {
@@ -40,7 +41,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 4fr 7fr;
   max-width: 1200px;
-  width: 70%;
+  width: 78%;
   height: 72vh;
   border-radius: 0.5rem;
   animation: 0.4s ease forwards ${zoomin};
@@ -62,6 +63,13 @@ const Title = styled.h2<{ accent: string }>`
   font-weight: 500;
   letter-spacing: 0.3rem;
   margin-bottom: 0.5rem;
+
+  /* hd */
+
+  /* fhd */
+  ${up('xl')} {
+    font-size: 3rem;
+  }
 `
 
 const Information = styled.div<{ light: string }>`
