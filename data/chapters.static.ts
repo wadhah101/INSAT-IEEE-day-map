@@ -1,4 +1,3 @@
-import { env } from 'process'
 import { writing } from './writing.static'
 
 const chapterImageFactory = (acronym: string) =>
