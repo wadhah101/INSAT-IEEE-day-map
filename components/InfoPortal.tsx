@@ -8,7 +8,7 @@ import { RiFileTextFill } from 'react-icons/ri'
 
 const zoomin = keyframes`
   from {
-    transform : scale(0.25)  ;
+    transform : scale(0.5)  ;
   }
 
   to {
@@ -40,7 +40,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 4fr 7fr;
   max-width: 1200px;
-  width: 78%;
+  width: 65%;
   height: 72vh;
   border-radius: 0.5rem;
   animation: 0.4s ease forwards ${zoomin};
@@ -68,7 +68,7 @@ const Information = styled.div<{ light: string }>`
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   background: ${({ light }) => light};
   color: #121212;
 `

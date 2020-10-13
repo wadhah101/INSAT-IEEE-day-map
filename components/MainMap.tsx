@@ -1,57 +1,51 @@
 import * as React from 'react'
-import { useEffect, useRef } from 'react'
-import styled from 'styled-components'
-import { Chapter, chapters } from '../data/chapters.static'
+import styled, { css } from 'styled-components'
+import { Chapter } from '../data/chapters.static'
+import { flags } from '../data/coordinates.data'
 
 interface props {
   openPortal: (chapter: Chapter) => void
 }
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
 `
 
 const MapImage = styled.img`
   max-height: 98vh;
 `
-const StyledArea = styled.area`
+
+const ChapterFlag = styled.img<{ accent: string; x: number; y: number }>`
+  position: absolute;
   cursor: pointer;
-  background: #ffffff68;
+
+  height: 11.5%;
+  transition: all ease-in-out 0.3s;
+
+  ${({ accent, x, y }) => css`
+    bottom: ${y}%;
+    left: ${x}%;
+    &:hover {
+      filter: drop-shadow(0 0 0.25rem ${accent});
+    }
+  `}
 `
 
 const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
-  const ref = useRef<HTMLImageElement>(null)
-
-  useEffect(() => {
-    console.log('init map', ref.current.height, ref.current.width)
-
-    const handler = () => console.log(window.innerHeight, window.innerWidth)
-
-    window.addEventListener('resize', handler)
-
-    return () => {
-      window.removeEventListener('resize', handler)
-    }
-  }, [])
-
   return (
     <Container>
-      <map name="infographic">
-        <StyledArea
-          shape="rect"
-          coords="0,0,1000,500"
-          onClick={() => openPortal(chapters.ias)}
+      <MapImage src="/images/map/map.webp" />
+
+      {flags.map(({ chapter, corr }) => (
+        <ChapterFlag
+          key={chapter.acronym}
+          src={`images/map/flags/${chapter.acronym}.png`}
+          onClick={() => openPortal(chapter)}
+          x={corr.x}
+          y={corr.y}
+          accent={chapter.colors.accent}
         />
-      </map>
-      <MapImage
-        ref={ref}
-        useMap="#infographic"
-        src="/images/map/MapWithItems.webp"
-      />
+      ))}
     </Container>
   )
 }

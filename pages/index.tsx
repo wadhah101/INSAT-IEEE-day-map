@@ -9,6 +9,9 @@ import { up } from 'styled-breakpoints'
 
 const Wrapper = styled.div`
   background: #794c32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 `
 
