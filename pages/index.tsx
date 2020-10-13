@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import styled from 'styled-components'
 import React, { useState } from 'react'
 import { Portal } from 'react-portal'
-import InfoWindow from '../components/InfoWindow'
+import InfoPortal from '../components/InfoPortal'
 import { chapters } from '../data/chapters.static'
 const Container = styled.div`
   margin: 0 auto;
@@ -13,6 +13,7 @@ const Container = styled.div`
 
 const index: NextPage = () => {
   const [portalOpen, setPortalOpen] = useState(false)
+  const [currentData, setCurrentData] = useState(chapters.cs)
 
   return (
     <Container>
@@ -23,9 +24,9 @@ const index: NextPage = () => {
       <button onClick={() => setPortalOpen(true)}> open portal </button>
       {portalOpen && (
         <Portal>
-          <InfoWindow
+          <InfoPortal
             closePortal={() => setPortalOpen(false)}
-            data={chapters.cs}
+            data={currentData}
           />
         </Portal>
       )}
