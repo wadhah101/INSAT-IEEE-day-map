@@ -29,7 +29,7 @@ export const chapters = {
     'http://cs-insat.ieee.tn',
     { accent: '#ff6535', light: '#ffe9e2' },
     writing.cs,
-    'https://meet.google.com/'
+    process.env.NEXT_PUBLIC_CS_LINK
   ),
 
   ras: new Chapter(
@@ -39,7 +39,7 @@ export const chapters = {
     { accent: '#e3074a', light: '#FEECF1' },
 
     writing.ras,
-    'https://meet.google.com/'
+    process.env.NEXT_PUBLIC_RAS_LINK
   ),
 
   embs: new Chapter(
@@ -49,7 +49,8 @@ export const chapters = {
     { accent: '#0E4DC4', light: '#EBF1FE' },
 
     writing.embs,
-    'https://meet.google.com/'
+
+    process.env.NEXT_PUBLIC_EMBS_LINK
   ),
 
   ias: new Chapter(
@@ -59,7 +60,7 @@ export const chapters = {
     { accent: '#3a7406', light: '#F0FEE5' },
 
     writing.ias,
-    'https://meet.google.com/'
+    process.env.NEXT_PUBLIC_IAS_LINK
   ),
 
   pes: new Chapter(
@@ -69,7 +70,7 @@ export const chapters = {
     { accent: '#538d22', light: '#F2FAEC' },
 
     writing.pes,
-    'https://meet.google.com/'
+    process.env.NEXT_PUBLIC_PES_LINK
   ),
 
   wie: new Chapter(
@@ -78,7 +79,7 @@ export const chapters = {
     null,
     { accent: '#e83e8c', light: '#FDF1F7' },
     writing.wie,
-    'https://meet.google.com/'
+    process.env.NEXT_PUBLIC_WIE_LINK
   ),
 }
 

@@ -28,9 +28,9 @@ const index: NextPage = () => {
   return (
     <Wrapper>
       <MainMap
-        openPortal={({ acronym }) => {
+        openPortal={({ acronym }) =>
           router.push({ path: '/', query: { chapter: acronym } })
-        }}
+        }
       />
       {current && (
         <Portal>
