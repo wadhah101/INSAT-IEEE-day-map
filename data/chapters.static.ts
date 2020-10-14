@@ -42,6 +42,16 @@ export const chapters = {
     process.env.NEXT_PUBLIC_RAS_LINK
   ),
 
+  ias: new Chapter(
+    'ias',
+    'Industry Applications Society',
+    'https://ias-insat.ieee.tn',
+    { accent: '#3a7406', light: '#F0FEE5' },
+
+    writing.ias,
+    process.env.NEXT_PUBLIC_IAS_LINK
+  ),
+
   embs: new Chapter(
     'embs',
     'Engineering in Medicine and Biology Society',
@@ -51,16 +61,6 @@ export const chapters = {
     writing.embs,
 
     process.env.NEXT_PUBLIC_EMBS_LINK
-  ),
-
-  ias: new Chapter(
-    'ias',
-    'Industry Applications Society',
-    'https://ias-insat.ieee.tn',
-    { accent: '#3a7406', light: '#F0FEE5' },
-
-    writing.ias,
-    process.env.NEXT_PUBLIC_IAS_LINK
   ),
 
   pes: new Chapter(
