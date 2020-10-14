@@ -7,6 +7,7 @@ import { chapters } from '../data/chapters.static'
 import MainMap from '../components/MainMap'
 import PortraitWarning from '../components/PortraitWarning'
 import { useRouter } from 'next/router'
+import SbPortal from '../components/SbPortal'
 
 const Wrapper = styled.div`
   background: #794c32;
@@ -21,10 +22,11 @@ const index: NextPage = () => {
 
   const routeAcronym = router.query.chapter
 
-  const current = Object.values(chapters).find(
+  const chapterPortalData = Object.values(chapters).find(
     ({ acronym }) => acronym === routeAcronym
   )
 
+  const sbPortal = routeAcronym === 'sb'
   return (
     <Wrapper>
       <MainMap
@@ -32,11 +34,22 @@ const index: NextPage = () => {
           router.push({ path: '/', query: { chapter: acronym } })
         }
       />
-      {current && (
+      {chapterPortalData && (
         <Portal>
           <InfoPortal
             closePortal={() => router.push({ path: '/' })}
-            data={current}
+            data={chapterPortalData}
+          />
+        </Portal>
+      )}
+
+      {sbPortal && (
+        <Portal>
+          <SbPortal
+            openPortal={({ acronym }) =>
+              router.push({ path: '/', query: { chapter: acronym } })
+            }
+            closePortal={() => router.push({ path: '/' })}
           />
         </Portal>
       )}

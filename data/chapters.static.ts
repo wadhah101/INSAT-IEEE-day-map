@@ -83,13 +83,11 @@ export const chapters = {
   ),
 }
 
-const sbWriting = ``
-
 export const studentBranch = new Chapter(
   'sb',
   'student branch',
   'https://insat.ieee.tn/',
-  { accent: '#ffffff00', light: '#E5F6FF' },
-  sbWriting,
-  'https://meet.google.com/'
+  { accent: '#00629b', light: '#E5F6FF' },
+  writing.sb,
+  process.env.NEXT_PUBLIC_SB_LINK
 )

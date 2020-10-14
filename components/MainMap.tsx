@@ -35,11 +35,7 @@ const ChapterFlag = styled.img<{ accent: string; x: number; y: number }>`
 `
 
 const SbFlag = styled(ChapterFlag)`
-  cursor: auto;
   height: 21%;
-  &:hover {
-    filter: none;
-  }
 `
 
 const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
@@ -63,6 +59,7 @@ const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
         x={sbFlag.corr.x}
         y={sbFlag.corr.y}
         accent={sbFlag.chapter.colors.accent}
+        onClick={() => openPortal(sbFlag.chapter)}
       />
     </Container>
   )

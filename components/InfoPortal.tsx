@@ -22,7 +22,7 @@ const zoomin = keyframes`
   }
 `
 
-const Wrapper = styled.div`
+export const PortalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Container = styled.div`
+export const PortalContainer = styled.div`
   overflow: hidden;
   background: #fff;
   z-index: 6;
@@ -82,7 +82,7 @@ const Information = styled.div<{ light: string }>`
     padding: 1rem;
   }
 `
-const Title = styled.h2<{ accent: string }>`
+export const PortalTitle = styled.h2<{ accent: string }>`
   color: ${({ accent }) => accent};
   text-transform: capitalize;
   font-size: 2.125rem;
@@ -95,7 +95,7 @@ const Title = styled.h2<{ accent: string }>`
   }
 `
 
-const ButtonWithIcon = styled.a`
+export const ButtonWithIcon = styled.a`
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   margin-top: 0.5rem;
@@ -130,7 +130,7 @@ const ButtonWithIcon = styled.a`
 const Writing = styled.p`
   font-size: 1rem;
 `
-const HangoutButton = styled(ButtonWithIcon)<{ accent: string }>`
+export const HangoutButton = styled(ButtonWithIcon)<{ accent: string }>`
   margin-top: 1.5rem;
   background: ${({ accent }) => accent};
 `
@@ -144,15 +144,15 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
   useOnClickOutside(ref, closePortal)
 
   return (
-    <Wrapper>
-      <Container ref={ref} onBlurCapture={() => console.log('blur')}>
+    <PortalWrapper>
+      <PortalContainer ref={ref}>
         <Pictures accent={data.colors.accent}>
           {data.images.map((e) => (
             <img src={e} />
           ))}
         </Pictures>
         <Information light={data.colors.light}>
-          <Title accent={data.colors.accent}> {data.name} </Title>
+          <PortalTitle accent={data.colors.accent}> {data.name} </PortalTitle>
 
           <Writing>{data.writing}</Writing>
 
@@ -173,8 +173,8 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
             <RiFileTextFill />
           </ButtonWithIcon>
         </Information>
-      </Container>
-    </Wrapper>
+      </PortalContainer>
+    </PortalWrapper>
   )
 }
 
