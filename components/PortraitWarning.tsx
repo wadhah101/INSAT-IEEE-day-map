@@ -25,6 +25,7 @@ const Title = styled.h1`
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  line-height: 110%;
 `
 
 const PortraitWarning: React.FunctionComponent = () => {
