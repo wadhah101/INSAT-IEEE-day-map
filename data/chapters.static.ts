@@ -77,7 +77,7 @@ export const chapters = {
     'wie',
     'women in engineering affinity group',
     null,
-    { accent: '#e83e8c', light: '#FDF1F7' },
+    { accent: '#662992', light: '#FDF1F7' },
     writing.wie,
     process.env.NEXT_PUBLIC_WIE_LINK
   ),
