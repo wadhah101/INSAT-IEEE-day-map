@@ -19,5 +19,5 @@ export const writing = {
 
   sb: `IEEEDAY 2020 will be very special. This year, and because of the global pandemic, all IEEE communities around the world have changed their plans and work strategies. It will definitely be a challenging year but it doesn't mean that il will stop us from giving an impressive performance and celebrate the IEEEDAY in a remarkable way.
   So fasten your seatbelts and get ready for IEEE INSAT SB's online IEEEDAY2020: National speakers, SB's alumni, our amazing chapters opening their doors for you and most importantly many surprises.
-  Join us on Wednesday at 7pm for an unforgettable journey `,
+  Join us on Wednesday at 7pm for an unforgettable journey.`,
 }

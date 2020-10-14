@@ -35,7 +35,9 @@ const Title = styled(PortalTitle)`
   }
 `
 
-const Writing = styled.p``
+const Writing = styled.p`
+  text-align: center;
+`
 
 const ChapterWrapper = styled.ul`
   display: flex;
