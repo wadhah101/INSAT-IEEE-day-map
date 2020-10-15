@@ -29,6 +29,10 @@ const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <title>INSAT IEEE day </title>
         <link rel="icon" type="image/png" href="/icon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="Description"
+          content="ieee day map for ieee insat student branch , containing an interactive map for all of our chapters , chaper description  and chapter gallery link to google meet conference and  form to join ieee insat "
+        />
       </Head>
       <Global />
       <Component {...pageProps} />

@@ -41,11 +41,12 @@ const SbFlag = styled(ChapterFlag)`
 const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
   return (
     <Container>
-      <MapImage src="/images/map/map.webp" />
+      <MapImage src="/images/map/map.webp" alt="main map" />
 
       {flags.map(({ chapter, corr }) => (
         <ChapterFlag
           key={chapter.acronym}
+          alt={`${chapter.name} flag`}
           src={`images/map/flags/${chapter.acronym}.webp`}
           onClick={() => openPortal(chapter)}
           x={corr.x}
@@ -56,6 +57,7 @@ const MainMap: React.FunctionComponent<props> = ({ openPortal }) => {
 
       <SbFlag
         src={`images/map/flags/sb.webp`}
+        alt={'student branch flag'}
         x={sbFlag.corr.x}
         y={sbFlag.corr.y}
         accent={sbFlag.chapter.colors.accent}

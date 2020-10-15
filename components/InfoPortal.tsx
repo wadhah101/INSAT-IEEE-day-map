@@ -148,7 +148,7 @@ const InfoPortal: React.FunctionComponent<Props> = ({ data, closePortal }) => {
       <PortalContainer ref={ref}>
         <Pictures accent={data.colors.accent}>
           {data.images.map((e) => (
-            <img src={e} />
+            <img src={e} alt={`${data.name}-image`} />
           ))}
         </Pictures>
         <Information light={data.colors.light}>
