@@ -5,13 +5,15 @@ import styled from 'styled-components'
 import { Chapter, chapters, studentBranch } from '../data/chapters.static'
 import { useOnClickOutside } from '../lib/hooks/useOnClickOutside'
 import {
+  ButtonWithIcon,
   HangoutButton,
   PortalContainer,
   PortalTitle,
   PortalWrapper,
+  Sameline,
 } from './InfoPortal'
-import { SiGooglehangoutsmeet } from 'react-icons/si'
 import { FiExternalLink } from 'react-icons/fi'
+import { RiFileTextFill } from 'react-icons/ri'
 
 interface Props {
   closePortal: () => void
@@ -75,13 +77,16 @@ const SbPortal: React.FunctionComponent<Props> = ({
           IEEE DAY <br /> INSAT STUDENT BRANCH
         </Title>
         <Writing> {studentBranch.writing} </Writing>
-        <HangoutButton
-          href={studentBranch.meet}
+
+        <ButtonWithIcon
+          href="https://forms.gle/iAFmkvrt4rw6e1Tx5"
           target="_blank"
-          accent={studentBranch.colors.accent}
         >
-          <span> join the main conferance</span> <SiGooglehangoutsmeet />
-        </HangoutButton>
+          <span>
+            join our family , fill <Sameline>the form !</Sameline>
+          </span>
+          <RiFileTextFill />
+        </ButtonWithIcon>
         <Other>And don't forget to check our chapters </Other>
         <ChapterWrapper>
           {Object.values(chapters).map((e) => (

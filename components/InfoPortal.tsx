@@ -135,7 +135,7 @@ export const HangoutButton = styled(ButtonWithIcon)<{ accent: string }>`
   background: ${({ accent }) => accent};
 `
 
-const Sameline = styled.span`
+export const Sameline = styled.span`
   white-space: nowrap;
 `
 
