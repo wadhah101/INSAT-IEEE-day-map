@@ -61,7 +61,7 @@ const end: NextPage = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>Sorry but the event have reached an end.</Title>
+        <Title>Sorry but the event has reached an end.</Title>
         <Subtitle>
           Our conferences are all concluded but our door stays always open ,
           come visit us on
